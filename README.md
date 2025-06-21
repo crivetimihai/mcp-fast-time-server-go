@@ -33,7 +33,7 @@ make run-http
 
 # SSE endpoint on port 8080
 make run-sse
-````
+```
 
 ## Installation
 

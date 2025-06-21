@@ -1,5 +1,6 @@
 fast-time-server
 dist
+dist/
 
 # Binaries for programs and plugins
 *.exe
