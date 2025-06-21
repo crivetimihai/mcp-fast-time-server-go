@@ -185,10 +185,11 @@ docker-run-sse-auth: docker-build
 .PHONY: bench
 
 bench:
-	@command -v hey >/dev/null 2>&1 || { \
-	    echo '✖ "hey" not installed → install from https://github.com/rakyll/hey'; exit 1; }
-	@echo "$(C_BLUE)Running: hey -n 100 -c 5 http://localhost:8080/http$(C_RESET)"
-	@hey -n 1000 -c 50 http://localhost:8080/http
+	@command -v hey >/dev/null || { echo '"hey" not installed'; exit 1; }
+	@echo "➜ load-test convert_time via /http"
+	@hey -m POST -T 'application/json' \
+	     -D payload.json \
+	     -n 100000 -c 100 http://localhost:8080/http
 
 # =============================================================================
 # 🧹 CLEANUP

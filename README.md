@@ -135,10 +135,6 @@ make coverage   # HTML coverage report
 make bench      # Go benchmarks
 ```
 
-## Contributing
-
-Contributions welcome! Please run `make ci` before opening PRs.
-
 ## License
 
 [Apache 2.0](LICENSE)
